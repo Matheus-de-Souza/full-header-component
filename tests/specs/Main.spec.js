@@ -77,6 +77,17 @@ describe('<FullHeader />', () => {
     });
   });
 
+  context('bgImg', () => {
+    it('should have background-image equal empty when none is passed ', () => {
+      const wrapper = shallow(<FullHeader />);
+      expect(wrapper).to.have.style('background-image').equal('url()');
+    });
+    it('should have background-image equal bg.jpg when bgImg is passed', () => {
+      const wrapper = shallow(<FullHeader bgImg="bg.jpg" />);
+      expect(wrapper).to.have.style('background-image').equal('url(bg.jpg)');
+    });
+  });
+
   // it('should have props for name', () => {
   //     const wrapper = shallow(<FullHeader name='lyef' />);
   //     expect(wrapper.props().name).to.be.defined;
