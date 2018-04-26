@@ -1,25 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FullHeader = ({ title, subtitle, bgColor, bgImg, textColor, font }) => {
-  const headerStyles = {
-    backgroundColor: bgColor,
-    backgroundImage: `url(${bgImg})`,
-    color: textColor,
-    fontFamily: font,
-  };
+import { headerStyle, containerStyle, titleStyle, subtitleStyle } from './Styles';
 
-  const component = (
-    <header style={headerStyles}>
-      {title && <h1>{title}</h1>}
-      {subtitle && <h2>{subtitle}</h2>}
-    </header>
-  );
-
-  return component;
-};
-
-FullHeader.propTypes = {
+const propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
   bgColor: PropTypes.string,
@@ -28,11 +12,35 @@ FullHeader.propTypes = {
   font: PropTypes.string,
 };
 
-FullHeader.defaultProps = {
+const defaultProps = {
   bgColor: '#ccc',
   bgImg: '',
   textColor: '#fff',
   font: 'sans-serif',
 };
+
+const FullHeader = ({ title, subtitle, bgColor, bgImg, textColor, font }) => {
+  const headerStylesCombined = {
+    ...headerStyle,
+    backgroundColor: bgColor,
+    backgroundImage: `url(${bgImg})`,
+    color: textColor,
+    fontFamily: font,
+  };
+
+  const component = (
+    <header style={headerStylesCombined}>
+      <div style={containerStyle}>
+        {title && <h1 style={titleStyle}>{title}</h1>}
+        {subtitle && <h2 style={subtitleStyle}>{subtitle}</h2>}
+      </div>
+    </header>
+  );
+
+  return component;
+};
+
+FullHeader.propTypes    = propTypes;
+FullHeader.defaultProps = defaultProps;
 
 export default FullHeader;
