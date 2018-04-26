@@ -1,6 +1,6 @@
 {
-  "name": "react-full-header",
-  "version": "0.0.1",
+  "name": "mws-react-full-header",
+  "version": "1.0.0",
   "description": "A full header component create with React (JS with TDD course)",
   "main": "dist/Main.js",
   "scripts": {
