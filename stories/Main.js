@@ -27,6 +27,15 @@ storiesOf('Full Header Component', module)
             textColor="#FF9900"
         />
     ))
+    .add('with title, subtitle, bgColor, textColor and font', () => (
+        <FullHeader
+            title="TDD"
+            subtitle="Curso de Javascript com TDD"
+            bgColor="#FF0033"
+            textColor="#FF9900"
+            font="cursive"
+        />
+    ))
     .add('with title, subtitle and bgImg', () => (
         <FullHeader
             title="TDD"

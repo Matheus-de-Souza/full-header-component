@@ -55,6 +55,28 @@ describe('<FullHeader />', () => {
     });
   });
 
+  context('textColor', () => {
+    it('should have color #fff when none is passed ', () => {
+      const wrapper = shallow(<FullHeader />);
+      expect(wrapper).to.have.style('color').equal('#fff');
+    });
+    it('should have color when bgColor is passed', () => {
+      const wrapper = shallow(<FullHeader textColor="#000" />);
+      expect(wrapper).to.have.style('color').equal('#000');
+    });
+  });
+
+  context('font', () => {
+    it('should have font equal sans-serif when none is passed ', () => {
+      const wrapper = shallow(<FullHeader />);
+      expect(wrapper).to.have.style('font-family').equal('sans-serif');
+    });
+    it('should have custom font when a font is passed', () => {
+      const wrapper = shallow(<FullHeader font="cursive" />);
+      expect(wrapper).to.have.style('font-family').equal('cursive');
+    });
+  });
+
   // it('should have props for name', () => {
   //     const wrapper = shallow(<FullHeader name='lyef' />);
   //     expect(wrapper.props().name).to.be.defined;

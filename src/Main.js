@@ -2,9 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const FullHeader = ({ title, subtitle, bgColor }) => {
+const FullHeader = ({ title, subtitle, bgColor, textColor, font }) => {
   const headerStyles = {
     backgroundColor: bgColor,
+    color: textColor,
+    fontFamily: font,
   };
 
   const component = (
@@ -19,10 +21,16 @@ const FullHeader = ({ title, subtitle, bgColor }) => {
 
 FullHeader.propTypes = {
   title: PropTypes.string,
+  subtitle: PropTypes.string,
+  bgColor: PropTypes.string,
+  textColor: PropTypes.string,
+  font: PropTypes.string,
 };
 
 FullHeader.defaultProps = {
   bgColor: '#ccc',
+  textColor: '#fff',
+  font: 'sans-serif',
 };
 
 export default FullHeader;
