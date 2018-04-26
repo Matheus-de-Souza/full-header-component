@@ -49,6 +49,6 @@ storiesOf('Full Header Component', module)
             subtitle="Curso de Javascript com TDD"
             bgColor="#FBE9EB"
             textColor="#3299BB"
-            bgImg="http://callmenick.com/_development/video/full-screen-background-video/media/demo.mp4"
+            video="//ak0.picdn.net/shutterstock/videos/3671960/preview/stock-footage-flight-over-clouds-loop-able-animation.mp4"
         />
     ));

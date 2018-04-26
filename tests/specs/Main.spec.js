@@ -88,6 +88,21 @@ describe('<FullHeader />', () => {
     });
   });
 
+  context('video', () => {
+    it('should have video tag when video is passed', () => {
+      const wrapper = shallow(<FullHeader video="video.mp4" />);
+      expect(wrapper.find('video')).to.have.length(1);
+    });
+    it('should not have video tag when video is not passed', () => {
+      const wrapper = shallow(<FullHeader />);
+      expect(wrapper.find('video')).to.have.length(0);
+    });
+    it('should have video tag with video passed', () => {
+      const wrapper = shallow(<FullHeader video="video.mp4" />);
+      expect(wrapper.find('video').props().src).to.be.equal('video.mp4');
+    });
+  });
+
   // it('should have props for name', () => {
   //     const wrapper = shallow(<FullHeader name='lyef' />);
   //     expect(wrapper.props().name).to.be.defined;

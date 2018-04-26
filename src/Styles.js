@@ -24,3 +24,15 @@ export const containerStyle = {
   position: 'relative',
   zIndex: 2,
 };
+
+export const videoStyle = {
+  position: 'fixed',
+  top: '50%',
+  left: '50%',
+  zIndex: 1,
+  minHeight: '100%',
+  minWidth: '100%',
+  height: 'auto',
+  width: 'auto',
+  transform: 'translate(-50%, -50%)',
+};
